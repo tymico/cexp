@@ -12,5 +12,8 @@
     011 嵌套if语句
     012 switch语句
     013 for语句
-    014 while语句
-    015 do-while语句
+    014 while语句: 最大公约数
+    015 do-while语句: sin(x)
+    016 break和continue语句
+    017 exit()函数
+    018 哥德巴赫猜想
