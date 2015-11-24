@@ -7,13 +7,14 @@
 
 int main(int argc, char * argv[])
 {
-    int score[5][7];
+    int score[4][6];
     int select;
     int i, j;
     int average = 0;
     int sum = 0;
+    printf("本程序有4项功能：\n");
     do {
-        printf("本程序有4项功能：\n");
+        sum = 0;
         printf("1 根据学号查询学生成绩\n");
         printf("2 根据考试号统计成绩\n");
         printf("3 根据考试号和学号查询成绩\n");
@@ -28,20 +29,33 @@ int main(int argc, char * argv[])
                 break;
             case 1:
                 printf("请输入学号:");
-                scanf("%d\n", &i);
+                scanf("%d", &i);
+                for (j = 0; j < 6; ++j) {
+                    printf("第%d科成绩是%d\n", j+1, score[i-1][j]);
+                    sum += score[i-1][j];
+                }
+                average = sum / 6;
+                printf("平均成绩是%d\n", average);
                 break;
             case 2:
                 printf("输入考试号：");
-                scanf("%d\n", &j);
+                scanf("%d", &j);
+                for (i = 0; i < 4; ++i) {
+                    printf("第%d号学生本科成绩是%d\n", i+1, score[i][j-1]);
+                    sum += score[i][j-1];
+                }
+                average = sum / 4;
+                printf("本科平均成绩是%d\n", average);
                 break;
             case 3:
                 printf("输入学号和考试号:");
-                scanf("%d %d\n", &i, &j);
+                scanf("%d %d", &i, &j);
+                printf("第%d号学生本科成绩是%d\n", i, score[i-1][j-1]);
                 break;
             case 4:
                 printf("请输入成绩：\n");
                 for (i = 0; i < 4; ++i) {
-                    for (j = 0; < 7; ++j) {
+                    for (j = 0; j < 6; ++j) {
                         scanf("%d\n", &score[i][j]);
                     }
                 }
@@ -49,7 +63,7 @@ int main(int argc, char * argv[])
             default:
                 break;
         }
-    } while (seclect == 0);
+    } while (1);
 
     return 0;
 }
