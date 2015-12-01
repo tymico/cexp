@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define F (0.0001)
+#define F (0.1)
 
 /*计算x³-8x²+12x-30=0*/
 float f(float x);
@@ -37,14 +37,14 @@ float f(float x)
 
 float xpoint(float x1, float x2)
 {
-    int x;
+    float x;
     x = (x1 * f(x2) - x2 * f(x1)) / (f(x2) - f(x1));
     return x;
 }
 
 float root(float x1, float x2)
 {
-    int x, y, y1;
+    float x, y, y1;
     y1 = f(x1);
     do {
         x = xpoint(x1, x2);
