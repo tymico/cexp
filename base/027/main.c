@@ -24,7 +24,7 @@ int main(int argc, char * argv[])
         }
     }
     putchar('\a');
-    printf("Down\n");
+    printf("Done\n");
 
     return 0;
 }
